@@ -28,16 +28,16 @@ class SecondPage extends StatelessWidget {
                   height: 120.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(80.r),
-                    color: Colors.greenAccent[100],
+                    color: Colors.red[100],
                   ),
                   child: Icon(
-                    Icons.add,
-                    color: Colors.greenAccent[400],
+                    Icons.remove,
+                    color: Colors.redAccent[400],
                     size: 60.w,
                   ),
                 ),
                 onTap: () {
-                  controller.increment();
+                  controller.decrement();
                 },
               ),
               SizedBox(
@@ -46,7 +46,7 @@ class SecondPage extends StatelessWidget {
               GetBuilder<ButtonController>(
                 builder: (_) => Text(
                   controller.count.toString(),
-                  style: TextStyle(fontSize: 200.sp),
+                  style: TextStyle(fontSize: 150.sp),
                 ),
               ),
               SizedBox(
@@ -58,16 +58,16 @@ class SecondPage extends StatelessWidget {
                   height: 120.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(80.r),
-                    color: Colors.red[100],
+                    color: Colors.greenAccent[100],
                   ),
                   child: Icon(
-                    Icons.remove,
-                    color: Colors.redAccent[400],
+                    Icons.add,
+                    color: Colors.greenAccent[400],
                     size: 60.w,
                   ),
                 ),
                 onTap: () {
-                  controller.decrement();
+                  controller.increment();
                 },
               ),
             ],
