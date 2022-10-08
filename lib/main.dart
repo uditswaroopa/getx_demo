@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:getx_demo/page/first_page.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: ((context, child) => const MaterialApp(
+      builder: ((context, child) => const GetMaterialApp(
             home: HomePage(),
             debugShowCheckedModeBanner: false,
           )),
@@ -29,11 +30,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('GetX'),
-      ),
-      body: const FirstPage(),
-    );
+    return const FirstPage();
   }
 }
