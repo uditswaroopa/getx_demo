@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:getx_demo/controlller/tap_controller.dart';
-import 'package:getx_demo/page/third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -37,14 +36,18 @@ class SecondPage extends StatelessWidget {
                     size: 60.w,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  controller.increment();
+                },
               ),
               SizedBox(
                 width: 100.w,
               ),
-              Text(
-                controller.count.toString(),
-                style: TextStyle(fontSize: 200.sp),
+              GetBuilder<ButtonController>(
+                builder: (_) => Text(
+                  controller.count.toString(),
+                  style: TextStyle(fontSize: 200.sp),
+                ),
               ),
               SizedBox(
                 width: 100.w,
@@ -63,7 +66,9 @@ class SecondPage extends StatelessWidget {
                     size: 60.w,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  controller.decrement();
+                },
               ),
             ],
           ),
@@ -93,24 +98,6 @@ class SecondPage extends StatelessWidget {
               ),
               SizedBox(
                 width: 20.w,
-              ),
-              GestureDetector(
-                child: Container(
-                  width: 120.w,
-                  height: 120.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(80.r),
-                    color: Colors.blue[50],
-                  ),
-                  child: Icon(
-                    Icons.navigate_next,
-                    color: Colors.blue,
-                    size: 60.w,
-                  ),
-                ),
-                onTap: () {
-                  Get.to(() => const ThirdPage());
-                },
               ),
             ],
           ),
